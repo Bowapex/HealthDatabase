@@ -1,11 +1,11 @@
 ----------------------------------------------------------------
-Wed Apr 17 22:03:12 CEST 2019:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a816c00e-016a-2ce5-636e-00000373e730 
-on database directory C:\Users\Apa\OneDrive - Schmidt Zoltán\NetBeansProjects\HealthDatabase\healthDB with class loader sun.misc.Launcher$AppClassLoader@55f96302 
-Loaded from file:/C:/Users/Apa/OneDrive%20-%20Schmidt%20Zolt%c3%a1n/NetBeansProjects/HealthDatabase/dist/run400882703/lib/derby.jar
+Fri May 03 15:47:55 CEST 2019:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a816c00e-016a-7df3-7bcf-000003791600 
+on database directory C:\Users\Apa\Desktop\Git\HealthDatabase\HealthDatabase\healthDB with class loader sun.misc.Launcher$AppClassLoader@55f96302 
+Loaded from file:/C:/Users/Apa/Desktop/Git/HealthDatabase/HealthDatabase/dist/run1449037724/lib/derby.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_201-b09
-user.dir=C:\Users\Apa\OneDrive - Schmidt Zoltán\NetBeansProjects\HealthDatabase
+user.dir=C:\Users\Apa\Desktop\Git\HealthDatabase\HealthDatabase
 os.name=Windows 10
 os.arch=amd64
 os.version=10.0
