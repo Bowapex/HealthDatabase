@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="healthdatabase.ViewController">
+   <children>
+      <SplitPane id="mainSplit" fx:id="mainSplit" dividerPositions="0.20300751879699247" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <StackPane id="menuPane" fx:id="menuPane" layoutX="-65.0" layoutY="61.0" prefHeight="537.0" prefWidth="159.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="61.0" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Label layoutX="218.0" layoutY="14.0" text="Health Adatbázis">
+                     <font>
+                        <Font name="Bauhaus 93" size="26.0" />
+                     </font>
+                  </Label>
+                  <Pane id="dataInputPane" fx:id="dataInputPane" prefHeight="537.0" prefWidth="620.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <VBox layoutX="265.0" layoutY="184.0" spacing="20.0">
+                           <children>
+                              <Label alignment="CENTER_RIGHT" layoutX="174.0" layoutY="64.0" prefHeight="25.0" prefWidth="88.0" text="Dátum:" />
+                              <Label alignment="CENTER_RIGHT" layoutX="184.0" layoutY="74.0" prefHeight="25.0" prefWidth="88.0" text="Idő:" />
+                              <Label alignment="CENTER_RIGHT" layoutX="194.0" layoutY="84.0" prefHeight="25.0" prefWidth="88.0" text="Vércukor:" />
+                              <Label alignment="CENTER_RIGHT" layoutX="204.0" layoutY="94.0" prefHeight="25.0" prefWidth="88.0" text="Étkezés:" />
+                              <Label alignment="CENTER_RIGHT" layoutX="214.0" layoutY="104.0" prefHeight="25.0" prefWidth="88.0" text="Vérnyomás:" />
+                              <Label alignment="CENTER_RIGHT" layoutX="224.0" layoutY="114.0" prefHeight="25.0" prefWidth="88.0" text="Pulzus:" />
+                              <Label alignment="CENTER_RIGHT" layoutX="234.0" layoutY="124.0" prefHeight="25.0" prefWidth="88.0" text="Testsúly:" />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="364.0" layoutY="184.0" spacing="20.0">
+                           <children>
+                              <DatePicker id="inputDate" fx:id="inputDate" prefHeight="25.0" prefWidth="205.0" promptText="Kattints a dátumokért!" showWeekNumbers="true" />
+                              <TextField id="inputTime" fx:id="inputTime" layoutX="327.0" layoutY="47.0" />
+                              <TextField id="inputGlucose" fx:id="inputGlucose" layoutX="337.0" layoutY="57.0" promptText="Használj pontot! PL: 4.5" />
+                              <ChoiceBox id="mealChoice" fx:id="mealChoice" prefHeight="25.0" prefWidth="206.0" />
+                              <TextField id="inputBloodPress" fx:id="inputBloodPress" layoutX="347.0" layoutY="67.0" promptText="120/80" />
+                              <TextField id="inputPulse" fx:id="inputPulse" layoutX="367.0" layoutY="87.0" />
+                              <TextField id="inputWeight" fx:id="inputWeight" />
+                           </children>
+                        </VBox>
+                        <Button id="addNewRecord" fx:id="addNewRecord" layoutX="408.0" layoutY="510.0" mnemonicParsing="false" onAction="#adRecord" text="Adatok hozzáadása" />
+                        <Label alignment="CENTER" layoutX="185.0" layoutY="79.0" prefHeight="21.0" prefWidth="263.0" text="Adatok hozzáadása a táblázathoz!">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane id="exportPane" fx:id="exportPane" prefHeight="537.0" prefWidth="620.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label layoutX="259.0" layoutY="144.0" text="Pdf export">
+                           <font>
+                              <Font name="Bauhaus 93" size="25.0" />
+                           </font>
+                        </Label>
+                        <TextField id="inputPdf" fx:id="inputPdf" layoutX="242.0" layoutY="205.0" />
+                        <Button id="exportButton" fx:id="exportButton" layoutX="281.0" layoutY="274.0" mnemonicParsing="false" onAction="#pdfCreate" text="Exportálás" />
+                     </children></Pane>
+                  <Pane id="tablePane" fx:id="tablePane" prefHeight="537.0" prefWidth="620.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <TableView id="table" fx:id="table" editable="true" layoutY="61.0" prefHeight="537.0" prefWidth="620.0">
+                            <placeholder>
+                                <Label text="Nincs adat!" />
+                            </placeholder>
+                          <columns>
+                           </columns>
+                        </TableView>
+                     </children>
+                  </Pane>
+                  <Pane id="statPane" fx:id="statPane" layoutY="61.0" prefHeight="537.0" prefWidth="633.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="61.0">
+                     <children>
+                        <LineChart id="glucChart" fx:id="glucChart" layoutX="1.0" legendSide="TOP" legendVisible="false" prefHeight="295.0" prefWidth="620.0" title="Vércukor">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                        <LineChart id="weightChart" fx:id="weightChart" layoutX="1.0" layoutY="295.0" legendVisible="false" prefHeight="242.0" prefWidth="620.0" title="Súly">
+                           <xAxis>
+                              <CategoryAxis side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis side="LEFT" />
+                           </yAxis>
+                        </LineChart>
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <Pane id="alertPane" fx:id="alertPane" layoutX="212.0" layoutY="148.0" prefHeight="305.0" prefWidth="376.0" visible="false">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="305.0" stroke="BLACK" strokeType="INSIDE" width="376.0">
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#e8195e" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Rectangle>
+            <Button id="alertButton" fx:id="alertButton" layoutX="153.0" layoutY="198.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" text="OK" />
+            <Label id="alertLabel" fx:id="alertLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="12.0" layoutY="100.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="74.0" prefWidth="353.0" text="rtetret" wrapText="true" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
