@@ -41,7 +41,7 @@
                         </VBox>
                         <VBox layoutX="364.0" layoutY="184.0" spacing="20.0">
                            <children>
-                              <DatePicker id="inputDate" fx:id="inputDate" prefHeight="25.0" prefWidth="205.0" promptText="Kattints a dátumokért!" showWeekNumbers="true" />
+                              <DatePicker id="inputDate" fx:id="inputDate" prefHeight="25.0" prefWidth="205.0" promptText="Kattints a dátumokért ide!" showWeekNumbers="true" />
                               <TextField id="inputTime" fx:id="inputTime" layoutX="327.0" layoutY="47.0" />
                               <TextField id="inputGlucose" fx:id="inputGlucose" layoutX="337.0" layoutY="57.0" promptText="Használj pontot! PL: 4.5" />
                               <ChoiceBox id="mealChoice" fx:id="mealChoice" prefHeight="25.0" prefWidth="206.0" />
